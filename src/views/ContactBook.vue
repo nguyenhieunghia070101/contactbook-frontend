@@ -80,7 +80,7 @@ export default {
     },
 
     computed:{
-        contactAsString(){
+        contactsAsStrings(){
             return this.contacts.map((contact) => { 
                 const { name, email, address, phone } = contact; 
                 return [name, email, address, phone].join('');
