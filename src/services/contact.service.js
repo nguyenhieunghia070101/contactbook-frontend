@@ -20,8 +20,8 @@ class ContactService {
         return (await this.api.post(this.baseUrl, contact)).data;
     }
 
-    async daleteMany(contact) {
-        return (await this.api.post(this.baseUrl, contact)).data;
+    async deleteMany() {
+        return (await this.api.delete(this.baseUrl)).data;
     }
 
     async get(id) {

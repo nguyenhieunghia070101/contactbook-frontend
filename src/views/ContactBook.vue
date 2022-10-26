@@ -47,6 +47,15 @@
                     <i class="fas fa-address-card" />
                 </h4> 
                 <ContactCard :contact="activeContact" /> 
+                <router-link 
+                    :to="{
+                        name: 'contact.edit', 
+                        params: { id: activeContact.id }, 
+                    }" 
+                > 
+                    <span class="mt-2 badge badge-warning"> 
+                        <i class="fas fa-edit" /> Hiệu chỉnh</span> 
+                </router-link>
             </div> 
         </div> 
     </div> 
@@ -82,8 +91,8 @@ export default {
     computed:{
         contactsAsStrings(){
             return this.contacts.map((contact) => { 
-                const { name, email, address, phone } = contact; 
-                return [name, email, address, phone].join('');
+                const { name, email, address, Phone } = contact; 
+                return [name, email, address, Phone].join('');
             });
         },
 
@@ -142,7 +151,7 @@ export default {
     },
 // The full code will be presented below 
 };
-</script> 
+</script>
 <style scoped> 
 .page { 
     text-align: left; 
