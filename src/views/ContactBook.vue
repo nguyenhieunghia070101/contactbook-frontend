@@ -29,7 +29,12 @@
                     class="btn btn-sm btn-success" 
                     @click="goToAddContact" 
                 > 
-                    <i class="fas fa-plus" /> Thêm mới 
+                    <i class="fas fa-plus" /> Thêm mới
+                    <ContactForm 
+                        :contact="contact" 
+                        @submit:contact="onUpdateContact" 
+                        @delete:contact="onDeleteContact" 
+                    />
                 </button> 
 
                 <button 
